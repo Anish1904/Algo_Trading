@@ -1,0 +1,61 @@
+============================================================
+ML TRADE FILTER — TRAINING REPORT
+============================================================
+Best model     : RandomForest
+Test ROC-AUC   : 0.5927
+
+Classification Report (test set):
+              precision    recall  f1-score   support
+
+   Bad Trade       0.42      0.62      0.50      7105
+  Good Trade       0.70      0.51      0.59     12461
+
+    accuracy                           0.55     19566
+   macro avg       0.56      0.56      0.54     19566
+weighted avg       0.60      0.55      0.56     19566
+
+
+Confusion Matrix:
+[[4378 2727]
+ [6109 6352]]
+
+Feature columns used:
+   1. returns_1
+   2. returns_5
+   3. returns_10
+   4. returns_20
+   5. hl_ratio
+   6. co_ratio
+   7. price_vs_ema_fast
+   8. price_vs_ema_slow
+   9. ema_spread
+  10. ema_slope_fast
+  11. ema_slope_slow
+  12. ma_regime
+  13. ma_spread
+  14. renko_direction
+  15. green_streak
+  16. red_streak
+  17. volatility_10
+  18. volatility_20
+  19. atr
+  20. atr_pct
+  21. volume_usd
+  22. volume_btc
+  23. vol_ratio
+  24. rsi_14
+  25. macd
+  26. macd_signal
+  27. macd_hist
+  28. hour
+  29. day_of_week
+  30. month
+
+Training config:
+  Brick size      : 100.0
+  EMA fast/slow   : 21 / 50
+  MA short/long   : 9 / 21
+  Future window   : 10 bars
+  Profit threshold: 0.3%
+  Train/Test split: 80% / 20%
+============================================================
